@@ -1,0 +1,28 @@
+.MemItem__wrapper {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.MemItem__image {
+    width: auto;
+    height: auto;
+    
+}
+
+
+.MemItem__name {
+    color: solid blue;
+    font-weight: 600;
+}
+
+
+.MemItem__description {
+    font-weight: 200;
+}
+
+.MemItem__button{
+    font-weight: 500;
+}
