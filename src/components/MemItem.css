@@ -4,10 +4,11 @@
     margin: 0 0 50px;
     margin-left: auto;
     margin-right: auto;
+    display: table;
 }
 
 .MemItem__image {
-    width: auto;
+    width: 400px;
     height: auto;
     
 }
@@ -19,10 +20,19 @@
 }
 
 
-.MemItem__description {
-    font-weight: 200;
+
+.MemItem_upVotes {
+    display:table-cell;
+    width: 50%;
 }
 
-.MemItem__button{
-    font-weight: 500;
+.MemItem__downVotes {
+    display: table-cell;
+    width: 50%;
+    
+}
+
+.MemItem__Votes {
+    display: table-row-group;
+    width: 400px;
 }
