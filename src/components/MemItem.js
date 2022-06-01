@@ -1,84 +1,36 @@
 import React, { Component } from "react";
 import './MemItem.css';
 import ListMems from "../data/ListMems";
+import PropTypes from 'prop-types';
 import './MemWrapper.css';
 import { ThumbUp, ThumbDown } from "@mui/icons-material";
 
 
 export class MemsWrapper extends Component {
 
-    
-    state = {
-        item: []
-    };
-
-    componentDidMount() {
-        this.setState({ item: ListMems })
-    };
-
-    handleEventUp = (memTitle) => {
-
-        const UpdateUpVoteList = this.state.item.map(item => {
-            if (item.title === memTitle) {
-                return Object.assign({}, item, {
-                    upvotes: item.upvotes += 1,
-                    index: item.upvotes - item.downvotes
-                });
-            } else {
-                return item;
-            }
-        });
-
-        this.setState({
-            item: UpdateUpVoteList,
-        });
-    };
-    
- 
-
-
-    handleEventDown = (memTitle) => {
-
-        const UpdateDownVoteList = this.state.item.map(item => {
-            if (item.title === memTitle) {
-                return Object.assign({}, item, {
-                    downvotes: item.downvotes += 1,
-                    index: item.upvotes - item.downvotes
-                });
-            } else {
-                return item;
-            }
-            
-        });
-    
-
-        this.setState({
-            item: UpdateDownVoteList,
-        });
-    };
-
-
-   
-
+  
     render() {
-            return this.state.item.map((item) => (
-
-                <MemItem
-
-                    key={item.title}
-                    title={item.title}
-                    images={item.img}
-                    upvotes={item.upvotes}
-                    downvotes={item.downvotes}
-                    upClick={this.handleEventUp}
-                    downClick={this.handleEventDown}
-                    index={item.index}
-                    
-                />
-
-            ));
-        }
+        return this.props.memes.map(item => (
+            <MemItem
+                key={item.title}
+                title={item.title}
+                images={item.img}
+                upvotes={item.upvotes}
+                downvotes={item.downvotes}
+                upClick={() => this.props.handleEventUp(item)}
+                downClick={() => this.props.handleEventDown(item)}
+                index={item.index}
+            />
+        ));
+    }
 }
+
+
+MemsWrapper.propTypes = {
+    memes: PropTypes.array,
+    handleEventUp: PropTypes.func,
+    handleEventDown: PropTypes.func
+};
 
 
 
@@ -86,7 +38,7 @@ export class MemItem extends Component {
 
     handleClickUp = () => this.props.upClick(this.props.title);
     handleClickDown = () => this.props.downClick(this.props.title);
-   
+
 
 
 
@@ -109,11 +61,11 @@ export class MemItem extends Component {
                     <div className="MemItem__Votes">
 
                         <div className="MemItem__upVotes">
-                            <button className="MemItem__upButton" onClick={this.handleClickUp}>{this.props.upvotes}<ThumbUp className="MemItem__upVotesIcon"/></button>
+                            <button className="MemItem__upButton" onClick={this.handleClickUp}>{this.props.upvotes}<ThumbUp className="MemItem__upVotesIcon" /></button>
                         </div>
 
                         <div className="MemItem__downVotes">
-                            <button className="MemItem__downButton" onClick={this.handleClickDown}>{this.props.downvotes}<ThumbDown className="MemItem__downVotesIcon"/></button>
+                            <button className="MemItem__downButton" onClick={this.handleClickDown}>{this.props.downvotes}<ThumbDown className="MemItem__downVotesIcon" /></button>
                         </div>
 
                         <h1>{this.props.index}</h1>
