@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+
 
 import { MemsWrapper } from './../components/MemItem'
 
@@ -16,8 +16,3 @@ export class Regular extends Component {
     }
 }
 
-Regular.propTypes = {
-    memes: PropTypes.array,
-    handleEventUp: PropTypes.func,
-    handleEventDown: PropTypes.func
-};

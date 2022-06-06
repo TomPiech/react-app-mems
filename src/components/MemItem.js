@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import './MemItem.css';
-import ListMems from "../data/ListMems";
-import PropTypes from 'prop-types';
-import './MemWrapper.css';
 import { ThumbUp, ThumbDown } from "@mui/icons-material";
+import Button from '@mui/material/Button';
 
 
 export class MemsWrapper extends Component {
@@ -24,14 +22,6 @@ export class MemsWrapper extends Component {
         ));
     }
 }
-
-
-MemsWrapper.propTypes = {
-    memes: PropTypes.array,
-    handleEventUp: PropTypes.func,
-    handleEventDown: PropTypes.func
-};
-
 
 
 export class MemItem extends Component {
@@ -61,15 +51,13 @@ export class MemItem extends Component {
                     <div className="MemItem__Votes">
 
                         <div className="MemItem__upVotes">
-                            <button className="MemItem__upButton" onClick={this.handleClickUp}>{this.props.upvotes}<ThumbUp className="MemItem__upVotesIcon" /></button>
+                            <Button variant="contained" style={{width: '196px', margin: '2px', fontSize: 20}} onClick={this.handleClickUp}><ThumbUp className="MemItem__upVotesIcon"/>{this.props.upvotes}</Button>
                         </div>
 
                         <div className="MemItem__downVotes">
-                            <button className="MemItem__downButton" onClick={this.handleClickDown}>{this.props.downvotes}<ThumbDown className="MemItem__downVotesIcon" /></button>
+                            <Button variant="contained" style={{width: '196px', margin: '2px', fontSize: 20 }} className="MemItem__downButton" onClick={this.handleClickDown}><ThumbDown className="MemItem__downVotesIcon" />{this.props.downvotes}</Button>
                         </div>
-
-                        <h1>{this.props.index}</h1>
-
+                       
                     </div>
                 </div>
             </li>

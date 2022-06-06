@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -8,6 +8,8 @@ import {
 import { Regular } from './components/Regular';
 import { Hot } from './components/Hot';
 import ListMems from './data/ListMems';
+import './components/App.css';
+
 
 class App extends Component {
   constructor() {
@@ -46,14 +48,15 @@ class App extends Component {
   }
 
   render = () => {
-    return (<Router>
-      <div className="App">
-        <ul className="App-header">
+    return (
+    <Router>
+      <div className="App__div">
+        <ul className="App__header">
           <li>
-            <Link to="/Regular">Regular</Link>
+            <Link className='App__regularLink' to="/Regular">Regular</Link>
           </li>
           <li>
-            <Link to="/Hot">Hot Mems</Link>
+            <Link className='App__hotLink' to="/Hot">Hot Mems</Link>
           </li>
         </ul>
         <Routes>

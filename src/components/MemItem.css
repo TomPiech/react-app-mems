@@ -1,7 +1,5 @@
 .MemItem__wrapper {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 50px;
+    margin: 5px 0 30px;
     margin-left: auto;
     margin-right: auto;
     display: table;
@@ -15,8 +13,8 @@
 
 
 .MemItem__name {
-    color: solid blue;
-    font-weight: 600;
+    color: black;
+    text-decoration: none;
 }
 
 
@@ -28,11 +26,24 @@
 
 .MemItem__downVotes {
     display: table-cell;
-    width: 50%;
-    
+    width: 50%;  
 }
 
 .MemItem__Votes {
     display: table-row-group;
     width: 400px;
+}
+
+.MemItem__mainDiv {
+    
+    border-radius: 20px;
+    background:#F2F3F4;
+    padding: 10px;
+    
+
+}
+
+.MemItem__upVotesIcon, .MemItem__downVotesIcon {
+    margin-right: 10px;
+    text-align: left;   
 }

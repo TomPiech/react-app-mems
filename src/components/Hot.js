@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { MemsWrapper } from './../components/MemItem'
 
 export class Hot extends Component {
@@ -15,8 +14,4 @@ export class Hot extends Component {
     }
 }
 
-Hot.propTypes = {
-    memes: PropTypes.array,
-    handleEventUp: PropTypes.func,
-    handleEventDown: PropTypes.func
-};
+

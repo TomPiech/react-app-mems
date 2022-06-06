@@ -1,0 +1,29 @@
+body {
+    background-color:#F8C471  
+}
+
+.App__header {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    position: fixed;
+    padding-left: 40px;
+    padding-top: 20px;
+    font-size: large;
+}
+
+.App__regularLink, .App__hotLink{
+    display: block;
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-align: left;
+    font-weight: 800;
+    
+}
+
+.App__regularLink:hover, .App__hotLink:hover {
+    background-color:#1976d2;
+    color: white;
+}
